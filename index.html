@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graduation Invitation - Nguyễn Thị Thiện Nhân</title>
-    <link rel="icon" href="https://anhdao303.github.io/flora-graduation/flora.JPG" type="image" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23fef08a%22 stroke=%22%23ca8a04%22 stroke-width=%228%22/><text x=%2250%22 y=%2254%22 font-size=%2245%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🎓</text></svg>"
+        type="image/svg+xml" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -33,8 +38,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .tab-button.active {
@@ -69,8 +81,17 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-            50% { transform: translateY(-30px) rotate(15deg); opacity: 1; }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(15deg);
+                opacity: 1;
+            }
         }
 
         /* Sparkle Effect */
@@ -87,8 +108,17 @@
         }
 
         @keyframes sparkle {
-            0%, 100% { transform: scale(0.5); opacity: 0.4; }
-            50% { transform: scale(1.5); opacity: 1; }
+
+            0%,
+            100% {
+                transform: scale(0.5);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
         }
 
         img.gallery-img {
@@ -101,7 +131,7 @@
             filter: brightness(1.05);
             box-shadow: 0 15px 30px rgba(202, 138, 4, 0.2);
         }
-        
+
         /* Floating Nav */
         nav {
             transition: all 0.3s;
@@ -111,13 +141,28 @@
 
 <body class="fade-in relative min-h-screen flex flex-col">
     <!--Background Music -->
-    <audio id="music" autoplay loop>
-        <source src="https://anhdao303.github.io/flora-graduation/music.mp3" type="audio/mpeg">
+    <audio id="bg-music" loop>
+        <source src="./image/Soft Paws.mp3" type="audio/mpeg">
     </audio>
+    <script>
+        document.body.addEventListener('click', function () {
+            var audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play().catch(function (e) {
+                    console.log("Autoplay prevented", e);
+                });
+            }
+        }, { once: false });
+    </script>
 
     <!-- Navigation (Floating Pill) -->
-    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 glass-panel px-8 py-3 rounded-full flex items-center justify-between gap-8 whitespace-nowrap">
-        <div class="script text-2xl text-yellow-600 font-bold hidden md:block">Thien Nhan</div>
+    <nav
+        class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 glass-panel px-8 py-3 rounded-full flex items-center justify-between gap-8 whitespace-nowrap">
+        <div class="flex items-center gap-2 hidden md:flex">
+            <span
+                class="w-8 h-8 rounded-full border-2 border-yellow-500 bg-yellow-100 flex items-center justify-center text-lg shadow-sm">🎓</span>
+            <span class="script text-2xl text-yellow-600 font-bold">Thien Nhan</span>
+        </div>
         <div class="space-x-6 text-sm font-semibold text-yellow-800">
             <a href="#home" class="hover:text-yellow-500 transition-colors">Home</a>
             <a href="#details" class="hover:text-yellow-500 transition-colors">Details</a>
@@ -127,21 +172,23 @@
     </nav>
 
     <main class="flex-grow pt-28 pb-12 px-4 sm:px-6">
-        
+
         <!-- Hero & Invitation Section -->
-        <section id="home" class="max-w-4xl mx-auto glass-panel rounded-[2rem] p-8 md:p-14 text-center relative overflow-hidden mb-16">
+        <section id="home"
+            class="max-w-4xl mx-auto glass-panel rounded-[2rem] p-8 md:p-14 text-center relative overflow-hidden mb-16">
             <!-- Decorative corners -->
             <div class="absolute top-0 left-0 w-32 h-32 bg-yellow-300 rounded-br-full opacity-20"></div>
             <div class="absolute bottom-0 right-0 w-32 h-32 bg-yellow-400 rounded-tl-full opacity-20"></div>
-            
+
             <h1 class="text-6xl md:text-8xl script text-yellow-600 mb-4 drop-shadow-sm mt-4">You're Invited</h1>
-            <p class="text-lg md:text-xl font-medium text-yellow-800 mb-2 uppercase tracking-widest">to celebrate the graduation of</p>
+            <p class="text-lg md:text-xl font-medium text-yellow-800 mb-2 uppercase tracking-widest">to celebrate the
+                graduation of</p>
             <h2 class="text-3xl md:text-5xl font-bold text-yellow-700 mb-6 py-2">Nguyễn Thị Thiện Nhân</h2>
-            
+
             <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full mb-6"></div>
-            
+
             <p class="italic text-yellow-900/70 max-w-lg mx-auto text-sm md:text-base leading-relaxed">
-                "Life is not about waiting for the storm to pass, it's about learning to dance in the rain"
+                "Trouble comes. So does progress—keep dancing"
             </p>
 
             <div class="mt-12 bg-white/50 inline-block px-10 py-6 rounded-2xl border border-yellow-100">
@@ -155,7 +202,7 @@
                 <!-- Info Card -->
                 <div class="glass-panel rounded-[2rem] p-8 md:p-10 flex flex-col justify-center">
                     <h3 class="text-3xl script text-yellow-600 mb-8 text-center lg:text-left">Event Details</h3>
-                    
+
                     <div class="space-y-6 text-lg">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center shrink-0">
@@ -184,7 +231,9 @@
                             <div>
                                 <p class="text-sm text-yellow-600 font-bold uppercase tracking-wider">Location</p>
                                 <p class="font-semibold text-yellow-900">Hall A - Tôn Đức Thắng University</p>
-                                <a href="https://maps.app.goo.gl/b4fe246c4KnW9pDF6" class="text-sm text-yellow-600 underline hover:text-yellow-800 transition-colors" target="_blank">View on Google Maps</a>
+                                <a href="https://maps.app.goo.gl/b4fe246c4KnW9pDF6"
+                                    class="text-sm text-yellow-600 underline hover:text-yellow-800 transition-colors"
+                                    target="_blank">View on Google Maps</a>
                             </div>
                         </div>
 
@@ -195,7 +244,7 @@
                             <div>
                                 <p class="text-sm text-yellow-600 font-bold uppercase tracking-wider">Contact</p>
                                 <p class="font-semibold text-yellow-900">0356739179 (Thiện Nhân)</p>
-                                <p class="font-semibold text-yellow-900">0376529385 (Thanh Sơn)</p>
+                                <!-- <p class="font-semibold text-yellow-900">0376529385 (Thanh Sơn)</p> -->
                             </div>
                         </div>
                     </div>
@@ -204,15 +253,25 @@
                 <!-- Map & Parking -->
                 <div class="flex flex-col gap-6">
                     <div class="glass-panel rounded-[2rem] p-6 overflow-hidden flex-grow flex flex-col">
-                        <p class="font-bold text-yellow-800 mb-3 uppercase tracking-wide text-sm flex items-center gap-2"><span>🗺️</span> Campus 360 View</p>
-                        <div class="w-full flex-grow min-h-[250px] rounded-xl overflow-hidden shadow-inner relative border border-yellow-200">
-                            <iframe src="https://360.tdtu.edu.vn/main/" width="100%" height="100%" frameborder="0" allowfullscreen allow="xr-spatial-tracking; gyroscope; accelerometer" scrolling="no" class="absolute inset-0"></iframe>
+                        <p
+                            class="font-bold text-yellow-800 mb-3 uppercase tracking-wide text-sm flex items-center gap-2">
+                            <span>🗺️</span> Campus 360 View
+                        </p>
+                        <div
+                            class="w-full flex-grow min-h-[250px] rounded-xl overflow-hidden shadow-inner relative border border-yellow-200">
+                            <iframe src="https://360.tdtu.edu.vn/main/" width="100%" height="100%" frameborder="0"
+                                allowfullscreen allow="xr-spatial-tracking; gyroscope; accelerometer" scrolling="no"
+                                class="absolute inset-0"></iframe>
                         </div>
                     </div>
-                    
+
                     <div class="glass-panel rounded-[2rem] p-6">
-                        <p class="font-bold text-yellow-800 mb-3 uppercase tracking-wide text-sm flex items-center gap-2"><span>🅿️</span> Parking Guide</p>
-                        <img src="https://anhdao303.github.io/flora-graduation/images/parking.png" class="w-full rounded-xl shadow-sm border border-yellow-100" />
+                        <p
+                            class="font-bold text-yellow-800 mb-3 uppercase tracking-wide text-sm flex items-center gap-2">
+                            <span>🅿️</span> Parking Guide
+                        </p>
+                        <img src="https://anhdao303.github.io/flora-graduation/images/parking.png"
+                            class="w-full rounded-xl shadow-sm border border-yellow-100" />
                     </div>
                 </div>
             </div>
@@ -222,29 +281,51 @@
         <section id="journey" class="max-w-5xl mx-auto glass-panel rounded-[2rem] p-8 md:p-14 mb-16 relative">
             <div class="absolute top-4 right-8 text-6xl opacity-10">🌻</div>
             <h3 class="text-4xl script text-yellow-600 mb-8 text-center">My Journey</h3>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="space-y-4 text-yellow-900/80 leading-relaxed text-justify">
-                    <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-yellow-600 first-letter:mr-3 first-letter:float-left">
-                        From the very first day I stepped through the university gates, I’ve grown, laughed, cried, studied hard, and created unforgettable memories. Today, I’m proud to say: I made it. Thank you to everyone who has been part of this journey.
+                    <p
+                        class="first-letter:text-5xl first-letter:font-bold first-letter:text-yellow-600 first-letter:mr-3 first-letter:float-left">
+                        Time flies, and my student days are finally coming to an end. It feels like just yesterday when
+                        I was registering for classes with my mom, moving into the dorm, and attending my first day of
+                        university—meeting new friends and adapting to a new environment. Yet here I am today,
+                        graduating... time really does fly!
                     </p>
                     <p>
-                        My path in IT wasn’t always smooth. There were moments I wanted to give up, times when I couldn’t grasp the lessons no matter how hard I tried. Some days, I cried from frustration and setbacks. But there were also moments of joy - sharing laughter with friends, enjoying time with family, and finding peace within myself.
+                        Since the day I stepped through the university gates, I've experienced the 'full combo' of
+                        emotions: joy, sadness, exhaustion, and so much more... Whoever says studying IT is easy, step
+                        right up 😾, it's incredibly tough! It hasn't always been smooth sailing, but hey, I made it
+                        through. And honestly, it's those very challenges and roller-coaster of emotions that created so
+                        many unforgettable memories during my college years, haha!
                     </p>
                     <p class="font-medium text-yellow-700">
-                        To you - who stood by me - who helped me feel better, be drunk, shared a laugh, or a life lesson - thank you. Your presence made all the difference.
+                        That's why I want to send my deepest gratitude to everyone who has been a part of my life. Thank
+                        you for laughing with me, chilling with me, and going absolutely crazy with me; and thank you
+                        for teaching me such valuable life lessons. You guys have helped me create this wonderful piece
+                        of my youth, hehe.
                     </p>
                 </div>
-                
-                <div class="space-y-4 text-yellow-900/80 leading-relaxed text-justify md:border-l md:border-yellow-200 md:pl-10">
-                    <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-yellow-600 first-letter:mr-3 first-letter:float-left">
-                        Từ ngày đầu tiên bước qua cánh cổng đại học, mình đã lớn lên, cười nè, khóc nè, học hành cũng vất vả huhu và tạo nên thật nhiều kỷ niệm không thể nào quên. Hôm nay, mình cũng chút tự hào nói rằng: Mình đã làm được. Cảm ơn tất cả những ai đã đồng hành cùng mình trên chặng đường này.
+
+                <div
+                    class="space-y-4 text-yellow-900/80 leading-relaxed text-justify md:border-l md:border-yellow-200 md:pl-10">
+                    <p
+                        class="first-letter:text-5xl first-letter:font-bold first-letter:text-yellow-600 first-letter:mr-3 first-letter:float-left">
+                        Thấm thoát rồi cũng hết thời gian được làm sinh viên nhỉ. Mới hôm nào mình còn đăng kí nhập học
+                        cùng mẹ; mới hôm nào mình còn nhận phòng ký túc xá; mới hôm nào mình bắt đầu ngày đi học đầu
+                        tiên ở trường, gặp gỡ bạn bè mới, làm quen với môi trường mới. Vậy mà hôm nay mình tốt nghiệp
+                        rồi… nhanh thật nhỉ!
                     </p>
                     <p>
-                        Hành trình học IT này không phải lúc nào cũng suôn sẻ. Đã có lúc mình muốn bỏ cuộc, rồi không hiểu nổi những bài giảng của thầy cô. Có những ngày mình chỉ biết khóc vì những điều tệ thật tệ xảy ra. Nhưng, cũng có những khoảnh khắc thật đẹp - khi mình được tận hưởng thời gian bên gia đình, bạn bè, và chính bản thân mình nữa.
+                        Từ ngày bước chân vào cánh cổng đại học, mình đã “đạt full combo” cảm xúc luôn: vui nè, buồn nè,
+                        mệt nè, và v.v… Học IT ai nói dễ bước ra đây 😾, khó lắm í. Không phải lúc nào cũng suôn sẻ đâu,
+                        nhưng mà mình đã vượt qua được rồi nè. Và chính những khó khăn, những combo cảm xúc đó đã tạo
+                        nên nhiều kỷ niệm khó quên cho mình trong năm tháng đại học này á haha!
                     </p>
                     <p class="font-medium text-yellow-700">
-                        Bởi vậy, cảm ơn tất cả những ai đã hiện diện trong cuộc đời mình, đã khiến mình cảm thấy tốt hơn, đã cùng mình chill, say ngoắc hay mang đến những bài học quý giá cho mình. Sự hiện diện của các bạn đã làm nên tất cả sự khác biệt đó hehe.
+                        Chính vì thế, mình muốn gửi lời cảm ơn đến những người đã xuất hiện trong cuộc đời mình. Cảm ơn
+                        vì đã cùng mình vui, cùng mình chill, cùng mình quậy banh chành; cũng cảm ơn vì đã cho mình
+                        những bài học thật quý giá. Các bạn đã cùng mình tạo nên một mảnh ghép thanh xuân tuyệt vời này
+                        é hehe!!🫶
                     </p>
                 </div>
             </div>
@@ -253,50 +334,126 @@
         <!-- Image Gallery -->
         <section id="gallery" class="max-w-6xl mx-auto">
             <h3 class="text-4xl script text-yellow-600 mb-8 text-center">Memories</h3>
-            
+
             <div class="flex justify-center flex-wrap gap-4 mb-10">
-                <button onclick="showTab('frienddd')" class="tab-button px-6 py-2.5 rounded-full font-bold active uppercase tracking-wide text-sm">Friends</button>
-                <button onclick="showTab('crazy')" class="tab-button px-6 py-2.5 rounded-full font-bold uppercase tracking-wide text-sm">Crazy Times</button>
-                <button onclick="showTab('grad')" class="tab-button px-6 py-2.5 rounded-full font-bold uppercase tracking-wide text-sm">Achievements</button>
+                <button onclick="showTab('frienddd')"
+                    class="tab-button px-6 py-2.5 rounded-full font-bold active uppercase tracking-wide text-sm">Friends</button>
+                <button onclick="showTab('crazy')"
+                    class="tab-button px-6 py-2.5 rounded-full font-bold uppercase tracking-wide text-sm">Funnies
+                </button>
+                <button onclick="showTab('grad')"
+                    class="tab-button px-6 py-2.5 rounded-full font-bold uppercase tracking-wide text-sm">Moments</button>
             </div>
 
             <!-- Tab Contents -->
-            <div class="glass-panel p-6 rounded-[2rem]">
-                <div id="frienddd" class="tab-content tab-active grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frs1.JPG" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds2.png" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds3.JPG" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds4.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds5.JPG" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds6.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds7.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds8.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/frds/frds9.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
+            <div class="glass-panel p-6 md:p-10 rounded-[2rem]">
+                <!-- Friends Tab -->
+                <div id="frienddd" class="tab-content tab-active columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+                    <div class="break-inside-avoid"><img src="./image/friends/c.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_1706540630470_1706542903260.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_20230108_142504.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_20230506_212356.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_20240129_162533.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_20240217_143734.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/IMG_20240711_230849.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/retouch_2023071515045437.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/friends/Screenshot 2026-05-22 033754.png"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img
+                            src="./image/friends/z7851628318083_2b5aa8ddd344041ca509283ea0889667.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
                 </div>
-                
-                <div id="crazy" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr1.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr2.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr3.JPG" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr4.png" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr5.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr6.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr7.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr8.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/crazy/cr9.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
+
+                <!-- Crazy Times Tab -->
+                <div id="crazy" class="tab-content hidden columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_1709004823249_1709005067195.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_20221222_222115.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_20230101_210656.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_20230530_180656.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <!-- <div class="break-inside-avoid"><img src="./image/crazy/IMG_20230530_180827.jpg" class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" /></div> -->
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_20230530_183355.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/IMG_20231031_192952.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/Screenshot 2026-05-22 034220.png"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img
+                            src="./image/crazy/z7851626542087_1b88747c563710b690cc0500ce0b344c.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img
+                            src="./image/crazy/z7851632313861_e1ffbf3e250837fca57ee9591bee3522.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/crazy/_MG_0103.JPG.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
                 </div>
-                
-                <div id="grad" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi1.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi2.png" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi3.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi4.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi5.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi6.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi7.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi9.jpg" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
-                    <img src="https://anhdao303.github.io/flora-graduation/images/achi/achi8.JPG" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-sm" />
+
+                <!-- Achievements Tab -->
+                <div id="grad" class="tab-content hidden columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+                    <div class="break-inside-avoid"><img
+                            src="./image/other/616847006_1212511527640908_8500158569899476471_n.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/other/IMG_1711817622413_1711817658912.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/other/IMG_20230103_001259.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/other/IMG_20230923_124333.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img src="./image/other/IMG_7714.JPG"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
+                    <div class="break-inside-avoid"><img
+                            src="./image/other/z7851611060276_597c2917ac9f4a805f6c172ce24abfbe.jpg"
+                            class="gallery-img w-full h-auto rounded-2xl shadow-sm" loading="lazy" />
+                    </div>
                 </div>
+            </div>
+
+            <!-- Official Invitation Link -->
+            <div class="mt-12 text-center">
+                <a href="./image/z7851649259913_2c85775a0424036d4cbdb4df5b027fe9.jpg" target="_blank"
+                    class="inline-flex flex-col items-center justify-center bg-yellow-50 px-12 py-4 rounded-[2.5rem] hover:bg-yellow-100 hover:scale-105 transition-all shadow-sm group cursor-pointer border-2 border-yellow-300">
+                    <span
+                        class="text-4xl script font-bold text-yellow-700 group-hover:text-yellow-800 transition-colors drop-shadow-sm mb-1">Thiệp
+                        mời chính thức 💌</span>
+                    <span class="text-[0.65rem] font-bold text-yellow-800/80 uppercase tracking-[0.25em]">Official
+                        Invitation</span>
+                </a>
             </div>
         </section>
     </main>
@@ -304,7 +461,8 @@
     <!-- Footer -->
     <footer class="mt-auto py-8 text-center text-yellow-800 font-medium">
         <div class="glass-panel inline-block px-8 py-3 rounded-full">
-            With love and gratitude <span class="mx-2">🌻</span> Thiện Nhân <span class="mx-2">🌻</span> Xin cảm ơn rất nhiều
+            Thanks You, With love and Gratitude❤️
+            <!-- <span class="mx-2">🌻</span> Thiện Nhân <span class="mx-2">🌻</span> Xin cảm ơn rấthiều -->
         </div>
     </footer>
 
@@ -317,7 +475,7 @@
             });
             document.getElementById(tabId).classList.remove('hidden');
             document.getElementById(tabId).classList.add('tab-active');
-            
+
             document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
@@ -346,7 +504,7 @@
                 heart.style.top = `${Math.random() * 100}vh`;
                 heart.style.animationDelay = `${Math.random() * 5}s`;
                 document.body.appendChild(heart);
-                
+
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
                 sparkle.style.left = `${Math.random() * 100}vw`;
@@ -358,11 +516,12 @@
             // Audio Autoplay
             window.addEventListener('click', function () {
                 const audio = document.getElementById('music');
-                if(audio.paused) {
+                if (audio.paused) {
                     audio.play().catch(e => console.log("Autoplay failed:", e));
                 }
             }, { once: false });
         });
     </script>
 </body>
+
 </html>
